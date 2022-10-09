@@ -1,4 +1,4 @@
-import { Text, StyleSheet, SafeAreaView, Button, TextInput } from "react-native"
+import { Text, StyleSheet,  Button, TextInput, SafeAreaView } from "react-native"
 import { StatusBar } from "expo-status-bar"
 import { useNavigation } from "@react-navigation/native"
 import { useState } from "react";

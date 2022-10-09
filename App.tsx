@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import App1 from './src/components/EntryDetails';
 import App2 from './src/components/ParkingDetails';
+import App3 from './src/components/PaymentDetails';
 
 
 
@@ -27,6 +28,18 @@ export default function App() {
         <Stack.Screen name="ParkingDetails" component={App2}
           options={{
             title: 'Parking Details',
+            headerStyle: {
+            backgroundColor: '#000000',
+            
+            },
+            headerTintColor: '#dcdcdc',
+            headerTitleStyle: {
+            fontWeight: 'bold',
+            },
+        }}/>
+         <Stack.Screen name="PaymentDetails" component={App3}
+          options={{
+            title: 'Go Back',
             headerStyle: {
             backgroundColor: '#000000',
             
