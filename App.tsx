@@ -1,9 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import App1 from './src/components/EntryDetails';
-import App2 from './src/components/ParkingDetails';
-import App3 from './src/components/PaymentDetails';
+import { Provider } from 'react-redux';
+import App1 from './src/views/EntryDetailsScreen';
+import App2 from './src/views/ParkingDetailsScreen';
+import App3 from './src/views/PaymentDetailsScreen';
+import { store } from './src/redux/store';
 
 
 
@@ -11,9 +13,10 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
+    <Provider store={store} >
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="EntryDetails" component={App1}
+        <Stack.Screen name="EntryDetailsScreen" component={App1}
           options={{
             title: 'Parking App',
             headerStyle: {
@@ -25,7 +28,7 @@ export default function App() {
             fontWeight: 'bold',
             },
         }}/>
-        <Stack.Screen name="ParkingDetails" component={App2}
+        <Stack.Screen name="ParkingDetailsScreen" component={App2}
           options={{
             title: 'Parking Details',
             headerStyle: {
@@ -37,7 +40,7 @@ export default function App() {
             fontWeight: 'bold',
             },
         }}/>
-         <Stack.Screen name="PaymentDetails" component={App3}
+         <Stack.Screen name="PaymentDetailsScreen" component={App3}
           options={{
             title: 'Go Back',
             headerStyle: {
@@ -53,7 +56,7 @@ export default function App() {
         
       </Stack.Navigator>
     </NavigationContainer>
-    
+    </Provider>
   );
 }
 
