@@ -1,16 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Text,
-  Button,
   View,
   StyleSheet,
   Modal,
   Pressable,
-  TouchableOpacity,
   TextInput,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { StatusBar } from "expo-status-bar";
 import { addTodo } from "../redux/actions";
 import { useDispatch } from "react-redux";
 
@@ -20,6 +17,7 @@ export default function TodoInput() {
   let [id, setId] = useState("");
   let [name, setName] = useState("");
   let [phone, setPhone] = useState("");
+  let [count, setCount] = useState(8)
 
   return (
     <SafeAreaView style={styles.container4}>
@@ -40,7 +38,7 @@ export default function TodoInput() {
               onChange={(e) => setName(e.target.value)}
               placeholder="Enter Car Registration"
             />
-            <Text>-Select time Slot:</Text>
+            <Text>-Enter Current Time:</Text>
             <TextInput
               style={styles.input}
               value={phone}
@@ -57,6 +55,7 @@ export default function TodoInput() {
               <Pressable
                 style={styles.buttonClose1}
                 onPress={() => {
+                  setCount(count-1)
                   dispatch(
                     addTodo({
                       id: id,

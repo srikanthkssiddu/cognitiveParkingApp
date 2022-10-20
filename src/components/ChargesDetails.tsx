@@ -14,9 +14,9 @@ export default function TodoItem({ todo }) {
         
       <Card style={styles.card}>
         <Card.Content>
-          <Text style={styles.title1}>-Car Registration :  </Text>
-          <Text style={styles.title1}>-TimeSpent : </Text>
-          <Text style={styles.title1}>-Parking Charges :</Text>
+          <Text style={styles.title1}>-Car Registration {todo.name}:  </Text>
+          <Text style={styles.title1}>-TimeSpent : {todo.phone} </Text>
+          <Text style={styles.title1}>-Parking Charges 10 $:</Text>
         </Card.Content>
       </Card>
       <SafeAreaView>
