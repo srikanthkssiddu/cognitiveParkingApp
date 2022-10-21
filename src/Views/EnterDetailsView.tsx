@@ -14,7 +14,7 @@ export default class EnterLotView extends EnterDetailsController {
           <SafeAreaView>
             <TextInput
               style={styles.input}
-              placeholder="Enter parking Slot Number"
+              placeholder="Enter Number Of Parking Slots"
               value={this.state.slot}
               onChangeText={(text: string) => this.onChangeTextNumLot(text)}
             />
